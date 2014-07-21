@@ -1,0 +1,14 @@
+{
+  "name": "dumblog",
+  "version": "0.1.0",
+  "description": "A dumb blog model for easy integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Thierry Passeron",
+  "license": "MIT"
+}
