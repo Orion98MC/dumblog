@@ -30,7 +30,7 @@ This will find all articles matching '*.md' in blog/articles directory.
 
 You may write articles in any format you like but, dumblog expects to find email-like meta information at the beginning of each article files __AND__ an __EMPTY__ line before the content:
 
-```txt
+```
 from: orion
 subject: New article!
 foo: bar
@@ -45,7 +45,7 @@ The article's content starts here after a __REQUIRED__ empty line...
 You can put any meta attributes in your articles. 
 If an attribute is expected to be an array, then separate each elements with commas like so:
 
-```txt
+```
 tags: foo, bar, baz
 ```
 
