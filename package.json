@@ -1,6 +1,6 @@
 {
   "name": "dumblog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A dumb blog model for easy integration",
   "main": "index.js",
   "scripts": {

@@ -34,8 +34,9 @@
 */
 
 function Blog(articlesPath, options) {
-  if (!fs.existsSync(articlesPath) && !fs.mkdirSync(articlesPath)) {
-    throw new Error('Could not create articles base dir for blog at ' + articlesPath);
+  console.log('- Starting blog at', articlesPath);
+  if (!fs.existsSync(articlesPath)) {
+    fs.mkdirSync(articlesPath);
   }
   
   this.options = options;
