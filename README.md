@@ -1,10 +1,10 @@
 # Dumblog
 
-Why? Because.
+Why? Because it's dumb and easy to integrate.
 
 ## Requirement
 
-none
+None (!)
 
 ## Install
 

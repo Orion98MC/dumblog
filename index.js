@@ -13,7 +13,7 @@
     * sort(Article a, Article b): default noop    // sort articles function
 
   @method articles()
-    returns all the articles found and cache it for next calls
+    returns all the articles found and cache them for next calls
     Rq: articles are those that can be found at the articlesPath and match the fileRegExp. 
       If you don't want an article to be added to the articles cache list you may set it's meta.status to something else than "published"
       which is set automatically during import. This can easily be done in a onArticle callback.
@@ -39,7 +39,7 @@ function Blog(articlesPath, options) {
     fs.mkdirSync(articlesPath);
   }
   
-  this.options = options;
+  this.options = options || {};
   this.options.meta = this.options.meta || this.Defaults.meta;
   this.options.multiple = this.options.multiple || this.Defaults.multiple;
   this.options.fileRegExp = this.options.fileRegExp || this.Defaults.fileRegExp;
@@ -149,9 +149,9 @@ Article.prototype.tidy = function (raw) {
     if (line.match(/^$/)) hadEmptyLine = true;
     if (hadEmptyLine) content.push(line);
     else {
-      var metaMatch = line.match(/^\s*([a-z]+)\s*:\s*(.*)$/);
+      var metaMatch = line.match(/^\s*([A-Za-z_\-0-9]+)\s*:\s*(.*)$/);
       if (metaMatch) { // Ex: foo: anything, bar, baz
-        var key = metaMatch[1], string = metaMatch[2];
+        var key = metaMatch[1].toLowerCase(), string = metaMatch[2];
         var values = string.split(/\s*,\s*/).map(function (s){ return s.trim(); });
         meta[key] = multiple.indexOf(key) >= 0 ? values : values.join(', ');
       }
